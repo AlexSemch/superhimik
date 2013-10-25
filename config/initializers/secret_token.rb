@@ -27,6 +27,6 @@ end
 Superhimik::Application.config.secret_key_base = secure_token
 
 
-#
+#dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsssssssssssssssssssssssssaaaaaaaaaaaaaawwwwwwww
 #OLD VER default
 #Superhimik::Application.config.secret_key_base = 'a884130cb59b0ec14cd42ed70c6ee2344e7fa5a9cc3578274cf8a0494e0290c107f788f96f3550695f6e38e40d3210ea74b9d70350634b516fa88f8a6adff9a9'
