@@ -28,4 +28,17 @@ describe "Static pages" do
       page.should have_title(I18n.t(:superhimik) + ' | ' + I18n.t(:contact_as))
     end
   end
+
+  describe "home page" do
+
+      it "should have the  rigth title" do
+        visit '/static_pages/home'
+        page.should have_title(I18n.t(:superhimik))
+      end
+      it "should not have a custom page title" do
+        visit '/static_pages/home'
+        expect(page).not_to have_title('| Home')
+    end
+  end
+
 end
