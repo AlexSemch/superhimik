@@ -4,10 +4,12 @@ ruby '2.0.0'
 
 gem 'rails', '4.0.0'
 gem "bootstrap-sass-rails", "~> 3.0.0.3"
+gem 'bcrypt-ruby', '3.0.1'
 
 group :development, :test do
   gem 'pg', '0.15.1'
   gem 'rspec-rails', '2.13.1'
+  gem "annotate", "~> 2.5.0"
 end
 
 group :test do
