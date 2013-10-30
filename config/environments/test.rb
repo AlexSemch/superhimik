@@ -33,4 +33,8 @@ Superhimik::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+  
+  # Set minimum value for cryptyng stcure password
+  ActiveModel::SecurePassword.min_cost = true
+
 end

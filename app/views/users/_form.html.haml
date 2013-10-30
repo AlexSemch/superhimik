@@ -1,0 +1,7 @@
+= simple_form_for(@user, html: {class: 'form-horizontal' }) do |f|
+	= f.input :nik, label: false, input_html: { maxlength: 20 }
+	= f.input :pip, label: false
+	= f.input :grade, collection: 5..11, prompt: I18n.t(:select_grade), label: false
+	= f.input :password, label: false
+	= f.input :password_confirmation, label: false
+	= f.button :submit, I18n.t(:create_user)

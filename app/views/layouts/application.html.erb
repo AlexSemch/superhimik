@@ -9,9 +9,19 @@
   <%= render 'layouts/shim' %>
 </head>
 <body>
-  <%= render 'layouts/header' %>
-
-    <%= yield %>
-
+	<div class="row">
+		<div class="col-md-12">
+			<%= render 'layouts/header' %>
+			<% flash.each do |key, value| %>
+				<div class="alert alert-<%= key %> fade in">
+					<a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
+        			<%= value %>
+        		</div>
+      		<% end %>
+			<%= yield %>	
+			
+					
+		</div>	
+	</div>
 </body>
 </html>

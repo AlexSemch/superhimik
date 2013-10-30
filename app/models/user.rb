@@ -11,7 +11,7 @@
 #  created_at      :datetime
 #  updated_at      :datetime
 #
-
+require "unicode"
 class User < ActiveRecord::Base
 	validates :nik, presence: true, length: { minimum: 4, maximum: 20}, uniqueness: { case_sensitive: false }
 	validates :pip, presence: true, length: { minimum: 10}

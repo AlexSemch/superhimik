@@ -1,3 +1,20 @@
 ua:
   sign_up: "Зареєструватися"
-  
+  select_grade: "Оберіть клас"
+  create_user: "Створити користувача"
+  welkome: "Ви успішно зареєструвалися. Вітаємо!"
+  simple_form:
+    labels:
+      user:
+        nik: 'Нік'
+        pip: 'ПІП'
+        grade: 'Клас'
+        password: 'Пароль'
+        password_confirmation: 'Підтвердження'
+    placeholders:
+      user:
+        nik: 'Ваш нік(не більше 20 символів)'
+        pip: 'Прізвище Імя По-батькові'
+        grade: 'Клас'
+        password: 'Введіть Ваш пароль'
+        password_confirmation: 'Введіть пароль ще раз'       
