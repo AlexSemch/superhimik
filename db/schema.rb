@@ -13,6 +13,17 @@
 
 ActiveRecord::Schema.define(version: 20131105075850) do
 
+  create_table "dimages", force: true do |t|
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+    t.text     "description"
+    t.boolean  "is_side"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "nik"
     t.string   "pip"
