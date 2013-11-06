@@ -3,6 +3,15 @@ ua:
   select_grade: "Оберіть клас"
   create_user: "Створити користувача"
   welkome: "Ви успішно зареєструвалися. Вітаємо!"
+  nik: 'Нік'
+  pip: 'ПІП'
+  grade: 'Клас'
+  invalid_comb: 'Невірний нік та/або пароль'
+  sign_in: 'Увійти'
+  account: 'Аккаунт'
+  profile: 'Профіль'
+  sign_out: 'Вийти'
+  settings: 'Налаштування'
   simple_form:
     labels:
       user:
@@ -11,10 +20,16 @@ ua:
         grade: 'Клас'
         password: 'Пароль'
         password_confirmation: 'Підтвердження'
+      session:
+        nik: 'Введіть Ваш нік'
+        password: 'Введіть пароль'
     placeholders:
       user:
         nik: 'Ваш нік(не більше 20 символів)'
         pip: 'Прізвище Імя По-батькові'
         grade: 'Клас'
         password: 'Введіть Ваш пароль'
-        password_confirmation: 'Введіть пароль ще раз'       
+        password_confirmation: 'Введіть пароль ще раз' 
+      session:
+        nik: 'Введіть Ваш нік'
+        password: 'Введіть пароль'      

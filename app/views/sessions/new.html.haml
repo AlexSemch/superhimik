@@ -1,0 +1,10 @@
+=provide(:title, t(:sign_in))
+.col-md-8.col-md-offset-2.center
+	.panel.panel-default
+		.panel-heading
+			%h1= I18n.t(:sign_in)
+		.panel-body
+			= simple_form_for(:session, url: sessions_path, html: {class: 'form-horizontal' }) do |f|
+				= f.input :nik, label: false, input_html: { maxlength: 20 }
+				= f.input :password, label: false 
+				= f.button :submit, I18n.t(:sign_in), class: "btn btn-primary btn-large" 

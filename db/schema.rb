@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131028122451) do
+ActiveRecord::Schema.define(version: 20131105075850) do
 
   create_table "users", force: true do |t|
     t.string   "nik"
@@ -21,8 +21,10 @@ ActiveRecord::Schema.define(version: 20131028122451) do
     t.integer  "grade"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "remember_token"
   end
 
   add_index "users", ["nik"], name: "index_users_on_nik", unique: true, using: :btree
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
 end

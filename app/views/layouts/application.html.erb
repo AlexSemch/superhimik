@@ -14,8 +14,8 @@
 			<%= render 'layouts/header' %>
 			<% flash.each do |key, value| %>
 				<div class="alert alert-<%= key %> fade in">
+					<%= value %>
 					<a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
-        			<%= value %>
         		</div>
       		<% end %>
 			<%= yield %>	
