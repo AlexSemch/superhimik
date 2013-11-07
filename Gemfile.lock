@@ -4,6 +4,12 @@ GIT
   specs:
     database_cleaner (1.2.0)
 
+GIT
+  remote: git://github.com/ciserfan/nivo_slider.git
+  revision: 6f2cda99d5d89567009d7fb56927af0c3dd50f8d
+  specs:
+    nivo_slider (1.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -215,6 +221,7 @@ DEPENDENCIES
   jbuilder (= 1.0.2)
   jquery-rails (= 3.0.4)
   libnotify (= 0.8.0)
+  nivo_slider!
   paperclip (~> 3.0)
   pg (= 0.15.1)
   rails (= 4.0.0)

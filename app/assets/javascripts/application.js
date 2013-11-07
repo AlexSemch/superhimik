@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require turbolinks
+//= require jquery.nivo.slider
+//= require jquery.nivo.slider.pack
 //= require_tree .

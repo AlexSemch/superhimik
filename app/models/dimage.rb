@@ -14,7 +14,7 @@
 #
 
 class Dimage < ActiveRecord::Base
-  has_attached_file :fotka, :styles => { :avatar => "200x200>", :medium => "300x300>", :thumb => "100x100>" }
+  has_attached_file :fotka, :styles => { :avatar => "200x200>", :slaid => "768x300>", :thumb => "100x100>" }
   validates :fotka, :attachment_presence => true
   validates :flag, :presence => true
 

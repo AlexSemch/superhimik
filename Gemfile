@@ -10,6 +10,7 @@ gem "unicode", "~> 0.4.4"
 gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.4'
 gem "paperclip", "~> 3.0"
+gem "nivo_slider", github: 'ciserfan/nivo_slider'
 
 group :development, :test do
   gem 'pg', '0.15.1'

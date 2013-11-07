@@ -1,5 +1,28 @@
-%h1= t(:home)
+.col-md-10.col-md-offset-1.center
+  .slider-wrapper.theme-default
+    #SliderMP.nivoSlider 
+      - @slider.each do |slaid|
+        = image_tag slaid.fotka.url(:slaid), title: slaid.descr 
+	
+  =link_to I18n.t(:sign_up), signup_path, class: "btn btn-large btn-primary"
 
-%p заглушка для домашньої сторінки
-.center
-	=link_to I18n.t(:sign_up), signup_path, class: "btn btn-large btn-primary"
+:javascript
+  $(window).load(function() {
+      $('#SliderMP').nivoSlider({
+          effect: 'random',               // Specify sets like: 'fold,fade,sliceDown'
+          slices: 15,                     // For slice animations
+          boxCols: 8,                     // For box animations
+          boxRows: 4,                     // For box animations
+          animSpeed: 500,                 // Slide transition speed
+          pauseTime: 3000,                // How long each slide will show
+          startSlide: 1,                  // Set starting Slide (0 index)
+          directionNav: true,             // Next & Prev navigation
+          controlNav: true,               // 1,2,3... navigation
+          controlNavThumbs: false,        // Use thumbnails for Control Nav
+          pauseOnHover: true,             // Stop animation while hovering
+          manualAdvance: false,           // Force manual transitions
+          prevText: 'Prev',               // Prev directionNav text
+          nextText: 'Next',               // Next directionNav text
+          randomStart: true,              // Start on a random slide
+    });
+  });

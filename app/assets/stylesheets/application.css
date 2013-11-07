@@ -10,5 +10,7 @@
  *
  *= require_self
  *= require twitter/bootstrap
+ *= require nivo-slider
+ *= require nivo-default
  *= require_tree .
  */
