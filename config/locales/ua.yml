@@ -1,0 +1,30 @@
+ua: 
+  simple_form:
+    labels:
+      user:
+        nik: 'Нік'
+        pip: 'ПІП'
+        grade: 'Клас'
+        password: 'Пароль'
+        password_confirmation: 'Підтвердження'
+      session:
+        nik: 'Введіть Ваш нік'
+        password: 'Введіть пароль'
+      dimage:
+        fotka: 'Оберіть файл(фото)'
+        flag: 'Тип файлу'
+        descr: 'Текст до файлу або примітка'
+    placeholders:
+      user:
+        nik: 'Ваш нік(не більше 20 символів)'
+        pip: 'Прізвище Імя По-батькові'
+        grade: 'Клас'
+        password: 'Введіть Ваш пароль'
+        password_confirmation: 'Введіть пароль ще раз' 
+      session:
+        nik: 'Введіть Ваш нік'
+        password: 'Введіть пароль' 
+      dimage:
+        fotka: 'Оберіть файл(фото)'
+        flag: 'Тип файлу'
+        descr: 'Текст до файлу або примітка'

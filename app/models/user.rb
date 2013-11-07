@@ -10,6 +10,7 @@
 #  grade           :integer
 #  created_at      :datetime
 #  updated_at      :datetime
+#  remember_token  :string(255)
 #
 
 # == Schema Information

@@ -1,5 +1,7 @@
 Superhimik::Application.routes.draw do
   
+  resources :dimages
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   root  'static_pages#home'

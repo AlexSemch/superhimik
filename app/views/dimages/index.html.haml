@@ -1,0 +1,30 @@
+%h1 Listing dimages
+
+%table.table-hover{:cellpadding => '5px', :cellspacing => '10px' }
+  %tr
+    %th= I18n.t(:fotka)
+    %th= I18n.t(:flag)
+    %th= I18n.t(:descr)
+    %th
+   
+
+  - @dimages.each do |dimage|
+    %tr
+      %td= image_tag dimage.fotka.url(:thumb)
+      %td= dimage.flag
+      %td= (dimage.descr.length > 50)?(dimage.descr[0..50] + '..'): (dimage.descr)
+      %td
+        = link_to(dimage, title: I18n.t(:show)) do
+          %span.glyphicon.glyphicon-search
+        /|
+        = link_to edit_dimage_path(dimage), title: I18n.t(:edit) do
+          %span.glyphicon.glyphicon-edit
+        /|
+        = link_to dimage, :method => :delete, :data => { :confirm => 'Are you sure?' }, title: I18n.t(:destroy) do
+          %span.glyphicon.glyphicon-remove
+
+%br
+
+= link_to new_dimage_path do
+  %span.glyphicon.glyphicon-plus
+  = I18n.t(:new_dimage)

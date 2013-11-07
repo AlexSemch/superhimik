@@ -1,0 +1,13 @@
+%p#notice= notice
+
+.center-block
+  = image_tag @dimage.fotka.url 
+  = @dimage.descr
+
+= link_to edit_dimage_path(@dimage) do
+  %span.glyphicon.glyphicon-edit
+  = I18n.t(:edit) 
+\|
+= link_to  dimages_path do
+  %span.glyphicon.glyphicon-circle-arrow-left
+  = I18n.t(:back)
