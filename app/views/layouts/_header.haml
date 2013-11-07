@@ -10,22 +10,22 @@
     %div{:class => "collapse navbar-collapse navbar-ex1-collapse"}
       %ul{:class => "nav navbar-nav"}
         %li 
-          =link_to "Home", root_path 
-        %li 
           %a{:href => "#"} About
         %li  
           %a{:href => "#"} Contact 
       %ul{:class => "nav navbar-nav navbar-right"}
         -if signed_in?
+          %li 
+            = link_to I18n.t(:dimage), dimages_path
           %li.dropdown
             %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
               =I18n.t(:account)
               %b.caret 
             %ul.dropdown-menu
               %li
-                =link_to I18n.t(:profile), current_user
+                =link_to I18n.t(:profile), '#'
               %li
-                =link_to I18n.t(:settings), current_user
+                =link_to I18n.t(:settings), edit_user_path(current_user)
               %li.divider 
               %li
                 =link_to I18n.t(:sign_out), signout_path, method: "delete"

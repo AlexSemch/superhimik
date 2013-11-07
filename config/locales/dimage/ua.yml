@@ -1,5 +1,7 @@
 ua:
+  dimage: 'Файли'
   new_dimage: 'Нове зображення'
+  edit_dimage: 'Редагувати зображення'
   for_slide: 'для слайдшоу'
   for_home_page: 'для домашньої сторінки'
   for_avatar: 'для аватарки'

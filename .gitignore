@@ -19,3 +19,5 @@ doc/
 .idea
 .secret
 bundler_stubs/
+# Ignore paperclip file
+/public/system/

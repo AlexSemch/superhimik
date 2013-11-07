@@ -4,7 +4,7 @@
       - @slider.each do |slaid|
         = image_tag slaid.fotka.url(:slaid), title: slaid.descr 
 	
-  =link_to I18n.t(:sign_up), signup_path, class: "btn btn-large btn-primary"
+  =link_to I18n.t(:sign_up), signup_path, class: "btn btn-large btn-primary"   unless signed_in?
 
 :javascript
   $(window).load(function() {
