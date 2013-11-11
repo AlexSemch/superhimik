@@ -8,6 +8,7 @@ ua:
   nik: 'Нік'
   pip: 'ПІП'
   grade: 'Клас'
+  avatar: 'Фото: '
   invalid_comb: 'Невірний нік та/або пароль'
   sign_in: 'Увійти'
   account: 'Аккаунт'

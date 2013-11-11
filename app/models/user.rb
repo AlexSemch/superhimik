@@ -2,30 +2,21 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  nik             :string(255)
-#  pip             :string(255)
-#  password_digest :string(255)
-#  admin           :boolean          default(FALSE)
-#  grade           :integer
-#  created_at      :datetime
-#  updated_at      :datetime
-#  remember_token  :string(255)
+#  id                  :integer          not null, primary key
+#  nik                 :string(255)
+#  pip                 :string(255)
+#  password_digest     :string(255)
+#  admin               :boolean          default(FALSE)
+#  grade               :integer
+#  created_at          :datetime
+#  updated_at          :datetime
+#  remember_token      :string(255)
+#  avatar_file_name    :string(255)
+#  avatar_content_type :string(255)
+#  avatar_file_size    :integer
+#  avatar_updated_at   :datetime
 #
 
-# == Schema Information
-#
-# Table name: users
-#
-#  id              :integer          not null, primary key
-#  nik             :string(255)
-#  pip             :string(255)
-#  password_digest :string(255)
-#  admin           :boolean          default(FALSE)
-#  grade           :integer
-#  created_at      :datetime
-#  updated_at      :datetime
-#
 require "unicode"
 class User < ActiveRecord::Base
 	validates :nik, presence: true, length: { minimum: 4, maximum: 20}, uniqueness: { case_sensitive: false }
@@ -35,8 +26,10 @@ class User < ActiveRecord::Base
  	before_save { |user| user.pip = pip.split.map{|elem| elem.capitalize }.join(' ') }
  	before_create :create_remember_token
  	has_secure_password
- 	validates :password, length: { minimum: 5 }
-
+	validates :password, length: { minimum: 5 }
+	has_attached_file :avatar, :styles => { :avatar => "200x200>" }
+	validates_attachment :avatar, :content_type => { :content_type => "image/jpg", :content_type => "image/png" }
+ 	
  	def User.new_remember_token
     	SecureRandom.urlsafe_base64
   	end

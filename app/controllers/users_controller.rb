@@ -38,7 +38,8 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:nik, :pip, :grade, :password,
+      params.require(:user).permit(:nik, :pip, :grade, :avatar,
+                                          :password,
                                           :password_confirmation)
     end
 

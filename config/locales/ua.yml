@@ -5,6 +5,7 @@ ua:
         nik: 'Нік'
         pip: 'ПІП'
         grade: 'Клас'
+        avatar: 'Фото'
         password: 'Пароль'
         password_confirmation: 'Підтвердження'
       session:
@@ -19,6 +20,7 @@ ua:
         nik: 'Ваш нік(не більше 20 символів)'
         pip: 'Прізвище Імя По-батькові'
         grade: 'Клас'
+        avatar: 'Завантажте своє фото'
         password: 'Введіть Ваш пароль'
         password_confirmation: 'Введіть пароль ще раз' 
       session:

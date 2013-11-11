@@ -2,15 +2,19 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  nik             :string(255)
-#  pip             :string(255)
-#  password_digest :string(255)
-#  admin           :boolean          default(FALSE)
-#  grade           :integer
-#  created_at      :datetime
-#  updated_at      :datetime
-#  remember_token  :string(255)
+#  id                  :integer          not null, primary key
+#  nik                 :string(255)
+#  pip                 :string(255)
+#  password_digest     :string(255)
+#  admin               :boolean          default(FALSE)
+#  grade               :integer
+#  created_at          :datetime
+#  updated_at          :datetime
+#  remember_token      :string(255)
+#  avatar_file_name    :string(255)
+#  avatar_content_type :string(255)
+#  avatar_file_size    :integer
+#  avatar_updated_at   :datetime
 #
 
 require 'spec_helper'

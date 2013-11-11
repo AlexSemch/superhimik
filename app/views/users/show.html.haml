@@ -1,2 +1,12 @@
 = provide(:title, @user.pip) 
-%h1= @user.pip
+.col-md-3.col-md-offset-1
+	= image_tag @user.avatar.url(:avatar)
+.col-md-8
+	%h1= @user.pip
+	%p
+		= @user.grade
+	%p
+		= I18n.t(:count_test)
+		= I18n.t(:round_ball)
+		= I18n.t(:reiting_in_class)
+				

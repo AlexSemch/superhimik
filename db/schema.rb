@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131107071856) do
+ActiveRecord::Schema.define(version: 20131111061337) do
 
   create_table "dimages", force: true do |t|
     t.string   "fotka_file_name"
@@ -28,11 +28,15 @@ ActiveRecord::Schema.define(version: 20131107071856) do
     t.string   "nik"
     t.string   "pip"
     t.string   "password_digest"
-    t.boolean  "admin",           default: false
+    t.boolean  "admin",               default: false
     t.integer  "grade"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "remember_token"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["nik"], name: "index_users_on_nik", unique: true, using: :btree
