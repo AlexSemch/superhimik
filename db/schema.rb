@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131111061337) do
+ActiveRecord::Schema.define(version: 20131112124525) do
+
+  create_table "ckeditor_assets", force: true do |t|
+    t.string   "data_file_name",               null: false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    limit: 30
+    t.string   "type",              limit: 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
+  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
 
   create_table "dimages", force: true do |t|
     t.string   "fotka_file_name"
@@ -23,6 +39,18 @@ ActiveRecord::Schema.define(version: 20131111061337) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "settings", force: true do |t|
+    t.string   "system_name"
+    t.string   "nav_year"
+    t.string   "footer"
+    t.text     "about_as"
+    t.text     "contact_as"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "settings", ["system_name"], name: "index_settings_on_system_name", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.string   "nik"

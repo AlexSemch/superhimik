@@ -16,4 +16,5 @@
 //= require turbolinks
 //= require jquery.nivo.slider
 //= require jquery.nivo.slider.pack
+//= require ckeditor/init
 //= require_tree .
