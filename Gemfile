@@ -11,6 +11,8 @@ gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.4'
 gem "paperclip", "~> 3.0"
 gem "nivo_slider", github: 'ciserfan/nivo_slider'
+gem "ckeditor", "~> 4.0.6"
+
 
 group :development, :test do
   gem 'pg', '0.15.1'
