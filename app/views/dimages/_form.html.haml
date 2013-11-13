@@ -3,7 +3,7 @@
 
   .form-inputs
     = f.file_field :fotka, class: "btn"
-    = f.input :flag, collection: [I18n.t(:for_slide), I18n.t(:for_home_page), I18n.t(:for_avatar)], as: :radio_buttons
+    = f.input :flag, collection: [I18n.t(:for_slide), I18n.t(:for_home_page)], as: :radio_buttons
     = f.input :descr, label: false
 
   .form-actions

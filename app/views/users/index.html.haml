@@ -1,0 +1,18 @@
+=provide(:title, I18n.t(:all_user))
+%h1= I18n.t(:all_user)
+= will_paginate
+%ul.users
+	- @users.each do |user|
+		%li
+			= image_tag user.avatar.url(:mini_avatar)
+			= user.nik + ' / ' + user.pip
+			.button-inline
+				- if current_user.admin? && !current_user?(user) 
+					=link_to user, method: :delete, data: { confirm: "Ви впевненні?" }, class: "btn btn-mini", title: I18n.t(:destroy) do
+						%span.glyphicon.glyphicon-remove 
+					- if user.admin?
+						=link_to user_make_admin_path(user), action: :make_admin, method: :put, class: "btn btn-mini", data: { confirm: "Залишити #{user.nik} без прав адміністратора?" }, title: t(:make_smertnim) do 
+							%span.glyphicon.glyphicon-edit
+					- else
+						=link_to user_make_admin_path(user), action: :make_admin, method: :put, data: { confirm: "Зробити #{user.nik} адміністратором?" }, title:  t(:make_admin) do
+							%span.glyphicon.glyphicon-edit

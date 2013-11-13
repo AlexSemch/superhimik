@@ -1,10 +1,11 @@
+= provide(:title, I18n.t(:system_settings))
 .col-md-8.col-md-offset-2.center
   .panel.panel-default
     .panel-heading
-      %h1= I18n.t(:edit_dimage)
+      %h1= I18n.t(:system_settings)
     .panel-body
       = render 'form'
   .pull-left
-    = link_to  dimages_path do
+    = link_to  root_path do
       %span.glyphicon.glyphicon-circle-arrow-left
       = I18n.t(:back)

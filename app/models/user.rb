@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
  	before_create :create_remember_token
  	has_secure_password
 	validates :password, length: { minimum: 5 }
-	has_attached_file :avatar, :styles => { :avatar => "200x200>" }
+	has_attached_file :avatar, :styles => { :avatar => "300x300>", :mini_avatar => "50x50>" }
 	validates_attachment :avatar, :content_type => { :content_type => "image/jpg", :content_type => "image/png" }
  	
  	def User.new_remember_token

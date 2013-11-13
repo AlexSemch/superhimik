@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
   before_action :signed_in_user, only: [:edit, :update]
   before_action :correct_user,   only: [:edit, :update]
+  before_action :admin_user,     only: [:destroy, :index, :make_admin]
+  
+  def index
+    @users = User.paginate(page: params[:page])    
+  end
+
   def new
   	@user = User.new
   end
@@ -33,6 +39,23 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def make_admin
+    @user = User.find(params[:user_id])
+    if @user.toggle!(:admin)
+      flash[:success] = "Користувач #{@user.nik} " + ((@user.admin?) ? t(:become_admin) : t(:become_user))
+      redirect_to users_url
+    else
+      flash[:danger] = 'ups!'
+      redirect_to users_url
+    end
+  end
+
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "User deleted."
+    redirect_to users_url
   end
 
   private

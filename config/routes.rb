@@ -2,8 +2,10 @@ Superhimik::Application.routes.draw do
   
   mount Ckeditor::Engine => '/ckeditor'
   resources :dimages
-
-  resources :users
+  # post 'users/make_admin'
+  resources :users do
+    put :make_admin
+  end 
   resources :sessions, only: [:new, :create, :destroy]
   root  'static_pages#home'
   match '/signup',  to: 'users#new',            via: 'get'

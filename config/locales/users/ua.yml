@@ -15,4 +15,13 @@ ua:
   profile: 'Профіль'
   sign_out: 'Вийти'
   settings: 'Налаштування'
+  adminka: "Адміністрування"
+  system_settings: "Налаштування системи"
   please_sign_in: 'Будь ласка, увійдіть.'
+  all_user: 'Список користувачів'
+  make_smertnim: 'Не адмін!'
+  make_admin: 'Зробити адміном!'
+  become_admin: "став адміністратором!"
+  become_user: "став перестав бути адміністратором!"
+  user: "Користувач"
+  users: "Користувачі"
