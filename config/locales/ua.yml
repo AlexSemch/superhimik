@@ -1,4 +1,6 @@
 ua: 
+  listing_topics: "Список тем"
+  new_topic: 'Нова тема'
   simple_form:
     labels:
       user:
@@ -36,3 +38,6 @@ ua:
         fotka: 'Оберіть файл(фото)'
         flag: 'Тип файлу'
         descr: 'Текст до файлу або примітка'
+      topic:
+        grade: 'Клас'
+        content: 'Введіть назву теми'

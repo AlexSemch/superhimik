@@ -1,0 +1,6 @@
+= simple_form_for(@topic, html: {class: 'form-inline' }) do |f|
+	= f.error_notification
+	
+	= f.input :content, label: false, input_html: { size: 100 }
+	= f.input :grade, collection: 5..11, label: false, prompt: I18n.t(:select_grade)
+	= f.button :submit, I18n.t(:save)

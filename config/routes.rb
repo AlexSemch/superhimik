@@ -1,5 +1,7 @@
 Superhimik::Application.routes.draw do
   
+  resources :topics
+
   mount Ckeditor::Engine => '/ckeditor'
   resources :dimages
   # post 'users/make_admin'
