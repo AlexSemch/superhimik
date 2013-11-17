@@ -15,6 +15,15 @@
           %a{:href => "#"} Contact 
       %ul{:class => "nav navbar-nav navbar-right"}
         -if signed_in?
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+              =I18n.t(:navchanna)
+              %b.caret
+            %ul.dropdown-menu
+              %li
+                =link_to I18n.t(:topics), topics_path
+              %li
+                =link_to I18n.t(:theories), theories_path
           -if current_user.admin?
             %li.dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}

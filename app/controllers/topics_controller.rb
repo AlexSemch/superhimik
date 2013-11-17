@@ -1,11 +1,12 @@
 class TopicsController < ApplicationController
+  include TopicsHelper
   before_action :set_topic,      only: [:show, :edit, :update, :destroy]
   before_action :signed_in_user
   before_action :admin_user,     only: [:destroy, :edit, :update]
   # GET /topics
   # GET /topics.json
   def index
-    @topics = Topic.all
+    @topics = get_topics
   end
 
   # GET /topics/1

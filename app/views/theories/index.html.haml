@@ -1,0 +1,23 @@
+%h1 Listing theories
+
+%table
+  %tr
+    %th Topic
+    %th Name
+    %th Theory text
+    %th
+    %th
+    %th
+
+  - @theories.each do |theory|
+    %tr
+      %td= theory.topic_id
+      %td= theory.name
+      %td= raw(theory.theory_text[0..200])
+      %td= link_to 'Show', theory
+      %td= link_to 'Edit', edit_theory_path(theory)
+      %td= link_to 'Destroy', theory, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Theory', new_theory_path

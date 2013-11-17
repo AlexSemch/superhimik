@@ -1,0 +1,11 @@
+- provide(:title, raw(@theory.name))
+%h2.text-center= @theory.name
+%p= raw(@theory.theory_text)
+
+= link_to theories_path do
+	%span.glyphicon.glyphicon-circle-arrow-left
+	= I18n.t(:back)
+\|
+= link_to edit_theory_path(@theory) do
+	%span.glyphicon.glyphicon-edit
+	= I18n.t(:edit)

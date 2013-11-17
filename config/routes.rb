@@ -1,5 +1,7 @@
 Superhimik::Application.routes.draw do
   
+  resources :theories
+
   resources :topics
 
   mount Ckeditor::Engine => '/ckeditor'

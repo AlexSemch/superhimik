@@ -1,0 +1,14 @@
+- provide(:title, I18n.t(:editing_theory))
+%h1.text-center= I18n.t(:editing_theory)
+
+= render 'form'
+
+= link_to @theory do 
+	%span.glyphicon.glyphicon-search
+	=I18n.t(:show)
+\|
+= link_to theories_path do
+	%span.glyphicon.glyphicon-circle-arrow-left
+	=I18n.t(:back)
+
+ 

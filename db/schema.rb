@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131114071058) do
+ActiveRecord::Schema.define(version: 20131115145747) do
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
@@ -51,6 +51,14 @@ ActiveRecord::Schema.define(version: 20131114071058) do
   end
 
   add_index "settings", ["system_name"], name: "index_settings_on_system_name", unique: true, using: :btree
+
+  create_table "theories", force: true do |t|
+    t.integer  "topic_id"
+    t.string   "name"
+    t.text     "theory_text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "topics", force: true do |t|
     t.string   "content"

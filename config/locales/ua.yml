@@ -1,6 +1,8 @@
 ua: 
   listing_topics: "Список тем"
   new_topic: 'Нова тема'
+  choose_topic: 'Оберіть тему'
+  new_theory: 'Новий теоретичний матеріал'
   simple_form:
     labels:
       user:
@@ -23,6 +25,8 @@ ua:
         footer: "Напис на футері:"
         about_as: "Контент сторіники 'Про нас':"
         contact_as: "Контент сторіники 'Звязатися з нами':"
+      theory:
+        theory_text: 'Теоретичний матеріал:'
     placeholders:
       user:
         nik: 'Ваш нік(не більше 20 символів)'
@@ -41,3 +45,5 @@ ua:
       topic:
         grade: 'Клас'
         content: 'Введіть назву теми'
+      theory:
+        name: 'Введіть назву теоретичного матеріалу'        
