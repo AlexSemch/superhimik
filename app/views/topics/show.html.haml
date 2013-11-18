@@ -1,12 +1,21 @@
-%p#notice= notice
-
-%p
-  %b Content:
-  = @topic.content
-%p
-  %b Grade:
-  = @topic.grade
-
-= link_to 'Edit', edit_topic_path(@topic)
-\|
-= link_to 'Back', topics_path
+- provide :title, @topic.content
+.text-center
+	%h1= @topic.content
+.row
+	.col-md-6
+		%h3.text-center Доступні теоретичні матеріали:
+		- if !@topic.theories.empty?
+			- @topic.theories.each do |theory|
+				%ul.list-group
+					%li.list-group-item
+						%span.glyphicon.glyphicon-circle-arrow-right.pull-left
+						.text-center
+							= link_to theory.name, theory, class: 'link_tab'
+		- else
+			.alert.alert-warning Нажаль, теоретичних матеріалів по данній темі ще немає...
+	.col-md-6
+		%h3.text-center Доступні тести:
+		.alert.alert-warning Нажаль, тестів по данній темі ще немає...
+= link_to topics_path do
+	%span.glyphicon.glyphicon-circle-arrow-left
+	= I18n.t(:back)

@@ -1,7 +1,13 @@
-%h1 Editing topic
+%h1= t(:editing_topic)
 
 = render 'form'
 
-= link_to 'Show', @topic
+%br
+%br
+= link_to @topic do
+	%span.glyphicon.glyphicon-search
+	= I18n.t(:show)
 \|
-= link_to 'Back', topics_path
+= link_to topics_path do
+	%span.glyphicon.glyphicon-circle-arrow-left
+	= I18n.t(:back)

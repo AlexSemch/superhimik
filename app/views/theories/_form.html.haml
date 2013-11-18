@@ -2,7 +2,7 @@
   = f.error_notification
 
   .form-inputs.text-center
-    = f.association :topic, label_method: :content, value_method: :id, label: false, prompt: I18n.t(:choose_topic)
+    = f.association :topic, label_method: :content, value_method: :id,  label: false, prompt: I18n.t(:choose_topic)
     = f.input :name, label: false, input_html: { size: 120 }
     = f.input :theory_text, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} }
 

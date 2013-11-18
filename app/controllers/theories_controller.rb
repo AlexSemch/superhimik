@@ -2,7 +2,7 @@ class TheoriesController < ApplicationController
   include TopicsHelper
   before_action :set_theory, only: [:show, :edit, :update, :destroy]
   before_action :signed_in_user
-  before_action :admin_user, only: [:new, :create, :edit, :update]
+  before_action :admin_user, only: [:new, :create, :edit, :update, :destroy]
   # GET /theories
   # GET /theories.json
   def index
@@ -13,7 +13,7 @@ class TheoriesController < ApplicationController
       topic_ids << topic.id 
     end
 
-    @theories = Theory.where(topic_id: topic_ids)
+    @theories = Theory.where(topic_id: topic_ids).paginate(:page => params[:page], :per_page => 12)
   end
 
   # GET /theories/1

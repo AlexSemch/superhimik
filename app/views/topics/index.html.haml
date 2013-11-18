@@ -2,9 +2,10 @@
 %h1.text-center=I18n.t(:listing_topics)
 
 .col-md-11
-  = link_to new_topic_path, id: 'n_topic', class: 'btn btn-default', remote: true do
-    %span.glyphicon.glyphicon-plus
-    =I18n.t(:new_topic)
+  - if admin?
+    = link_to new_topic_path, id: 'n_topic', class: 'btn btn-default', remote: true do
+      %span.glyphicon.glyphicon-plus
+      =I18n.t(:new_topic)
 
   .panel.panel-default
     -@topics.group_by{|t| t.grade}.each do |grade, topics|
@@ -15,8 +16,9 @@
           %li.list-group-item.list_topic{id: "top_#{topic.id}"}
             =link_to topic, class: 'link_tab' do
               =topic.content      
-            = link_to edit_topic_path(topic), title: I18n.t(:edit) do
-              %span.glyphicon.glyphicon-edit
-            = link_to topic, :method => :delete, :data => { :confirm => 'Ви впевненні?' }, title: I18n.t(:destroy), remote: true do
-              %span.glyphicon.glyphicon-remove
+            - if admin?
+              = link_to edit_topic_path(topic), title: I18n.t(:edit), remote: true do
+                %span.glyphicon.glyphicon-edit
+              = link_to topic, :method => :delete, :data => { :confirm => 'Ви впевненні?' }, title: I18n.t(:destroy), remote: true do
+                %span.glyphicon.glyphicon-remove
 

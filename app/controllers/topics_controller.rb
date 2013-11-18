@@ -45,7 +45,7 @@ class TopicsController < ApplicationController
   def update
     respond_to do |format|
       if @topic.update(topic_params)
-        format.html { flash[:success] = I18n.t(:topic_successfuly_updated); redirect_to @topic }
+        format.html { flash[:success] = I18n.t(:topic_successfuly_updated); redirect_to topics_url }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

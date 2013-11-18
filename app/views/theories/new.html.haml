@@ -1,6 +1,7 @@
 %h1.text-center= I18n.t(:new_theory)
-
-= render 'form'
+.pull-center	
+	.col-md-10
+		= render 'form'
 
 = link_to  theories_path do
 	%span.glyphicon.glyphicon-circle-arrow-left

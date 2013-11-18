@@ -50,4 +50,8 @@ module SessionsHelper
       redirect_to(root_url) unless current_user.admin?
     end
 
+    def admin?
+      (current_user.admin?) ? true : false
+    end
+
 end
