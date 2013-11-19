@@ -7,7 +7,7 @@ module TopicsHelper
 		elsif current_user.grade
 			Topic.where(grade: current_user.grade)
 		else
-			nil
+			Topic.none
 		end
 	end
 end
