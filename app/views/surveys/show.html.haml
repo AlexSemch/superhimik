@@ -1,21 +1,27 @@
-%p#notice= notice
+- provide :title, @survey.name.html_safe
+.text-center
+  %h1
+    = @survey.name
+    .label.label-default
+      = @survey.time_to_complete.to_s + ' хв'
 
-%p
-  %b Topic:
-  = @survey.topic_id
-%p
-  %b Name:
-  = @survey.name
-%p
-  %b Number of quesitons:
-  = @survey.number_of_quesitons
-%p
-  %b Time to complete:
-  = @survey.time_to_complete
-%p
-  %b Type:
-  = @survey.type
+- @survey.questions.each do |question|
+  %h3= question.content.html_safe
+  .display-inline
+    - question.answers.each do |answer|
+      - if answer.correct_answer
+        .first_level
+          %span.glyphicon.glyphicon-ok
+          = answer.content.html_safe
+      - else
+        .second_level
+          = answer.content.html_safe
 
-= link_to 'Edit', edit_survey_path(@survey)
+
+= link_to surveys_path do
+  %span.glyphicon.glyphicon-circle-arrow-left
+  = I18n.t(:back)
 \|
-= link_to 'Back', surveys_path
+= link_to edit_survey_path(@survey) do
+  %span.glyphicon.glyphicon-edit
+  = I18n.t(:edit)

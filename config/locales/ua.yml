@@ -6,11 +6,14 @@ ua:
   listing_theories: "Усі теоретичні матеріали"
   editing_topic: 'Редагування теми'
   choose_topic: 'Оберіть тему'
+  tests: "Тести"
   new_theory: 'Новий теоретичний матеріал'
   topic_successfully_created: "Тема успішно створена"
   topic_successfully_updated: "Тема успішно оновлена"
   theory_successfully_created: "Теоретичний матеріал успішно створений"
   theory_successfully_updated: "Теоретичний матеріал успішно оновлений"
+  test_successfully_created: "Тест успішно створено"
+  test_successfully_updated: "Тест успішно оновлено"
   navchanna: 'Навчання'
   will_paginate:
     next_label: "Наступна сторінка"

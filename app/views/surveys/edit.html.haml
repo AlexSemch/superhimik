@@ -1,7 +1,11 @@
-%h1 Editing survey
+%h1 Редагування теста
 
 = render 'form'
 
-= link_to 'Show', @survey
+= link_to @survey do
+  %span.glyphicon.glyphicon-search
+  =I18n.t(:show)
 \|
-= link_to 'Back', surveys_path
+= link_to surveys_path do
+  %span.glyphicon.glyphicon-circle-arrow-left
+  =I18n.t(:back)

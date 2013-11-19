@@ -21,9 +21,11 @@
               %b.caret
             %ul.dropdown-menu
               %li
-                =link_to I18n.t(:topics), topics_path
+                =link_to raw('<span class="glyphicon glyphicon-list"></span>' + I18n.t(:topics)), topics_path
               %li
-                =link_to I18n.t(:theories), theories_path
+                =link_to raw('<span class="glyphicon glyphicon-file"></span>' + I18n.t(:theories)), theories_path
+              %li
+                =link_to raw('<span class="glyphicon glyphicon-check"></span>' + t(:tests)), surveys_path
           -if current_user.admin?
             %li.dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
@@ -42,12 +44,12 @@
               %b.caret 
             %ul.dropdown-menu
               %li
-                =link_to I18n.t(:profile), current_user
+                =link_to raw('<span class="glyphicon glyphicon-user"></span>' + I18n.t(:profile)), current_user
               %li
-                =link_to I18n.t(:settings), edit_user_path(current_user)
+                =link_to raw('<span class="glyphicon glyphicon-wrench"></span>' + I18n.t(:settings)), edit_user_path(current_user)
               %li.divider 
               %li
-                =link_to I18n.t(:sign_out), signout_path, method: "delete"
+                =link_to raw('<span class="glyphicon glyphicon-log-out"></span>' + I18n.t(:sign_out)), signout_path, method: "delete"
         -else  
           %li
             = link_to I18n.t(:sign_in), signin_path 

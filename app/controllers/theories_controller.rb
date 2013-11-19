@@ -37,7 +37,7 @@ class TheoriesController < ApplicationController
 
     respond_to do |format|
       if @theory.save
-        format.html { flash[:success] = t(:theory_was_successfully_created); redirect_to @theory}
+        format.html { flash[:success] = t(:theory_successfully_created); redirect_to @theory}
         format.json { render action: 'show', status: :created, location: @theory }
       else
         format.html { render action: 'new' }
@@ -51,7 +51,7 @@ class TheoriesController < ApplicationController
   def update
     respond_to do |format|
       if @theory.update(theory_params)
-        format.html { flash[:success] = t(:theory_was_successfully_updated); redirect_to @theory}
+        format.html { flash[:success] = t(:theory_successfully_updated); redirect_to @theory}
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

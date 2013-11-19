@@ -1,4 +1,6 @@
 class SurveysController < ApplicationController
+  before_action :signed_in_user
+  before_action :admin_user
   before_action :set_survey, only: [:show, :edit, :update, :destroy]
 
   # GET /surveys
@@ -28,7 +30,7 @@ class SurveysController < ApplicationController
 
     respond_to do |format|
       if @survey.save
-        format.html { redirect_to @survey, notice: 'Survey was successfully created.' }
+        format.html { flash[:success] = t(:test_successfully_created); redirect_to surveys_url}
         format.json { render action: 'show', status: :created, location: @survey }
       else
         format.html { render action: 'new' }
@@ -42,7 +44,7 @@ class SurveysController < ApplicationController
   def update
     respond_to do |format|
       if @survey.update(survey_params)
-        format.html { redirect_to surveys_url, notice: 'Survey was successfully updated.' }
+        format.html { flash[:success] = t(:test_successfully_updated); redirect_to surveys_url }
         #format.json { head :no_content }
       else
         format.html { render action: 'edit' }

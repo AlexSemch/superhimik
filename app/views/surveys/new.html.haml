@@ -1,5 +1,8 @@
-%h1 New survey
+- provide :title, 'Новий тест'
+%h1.text-center Новий тест
 
 = render 'form'
 
-= link_to 'Back', surveys_path
+= link_to surveys_path do
+  %span.glyphicon.glyphicon-circle-arrow-left
+  = I18n.t(:back)

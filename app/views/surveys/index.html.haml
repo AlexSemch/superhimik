@@ -1,27 +1,25 @@
-%h1 Listing surveys
+- provide :title, 'Список тестів'
+.text-center
+  %h1 Список тестів
+= link_to new_survey_path, class: 'btn btn-default' do
+  %span.glyphicon.glyphicon-plus
+  Додати тест
 
-%table
-  %tr
-    %th Topic
-    %th Name
-    %th Number of quesitons
-    %th Time to complete
-    %th Type
-    %th
-    %th
-    %th
+-@surveys.group_by{|s| s.topic.grade}.each do |grade, topics|
+  .grade= grade
+  .panel.panel-default
+    -topics.group_by{|t| t.topic_id}.each do |top, surv|
+      %h2
+        .label.label-default= Topic.find(top).content
+      .first_level
+        %ul.list-group
+          -surv.each do |survey|
+            %li.list-group-item
+              = link_to survey, class: 'link_tab' do
+                =survey.name.html_safe
+              = link_to edit_survey_path(survey), title: I18n.t(:edit) do
+                %span.glyphicon.glyphicon-edit
+              = link_to survey, :method => :delete, :data => { :confirm => 'Ви впевненні?' }, title: I18n.t(:destroy) do
+                %span.glyphicon.glyphicon-remove
 
-  - @surveys.each do |survey|
-    %tr
-      %td= survey.topic_id
-      %td= survey.name
-      %td= survey.number_of_quesitons
-      %td= survey.time_to_complete
-      %td= survey.test_type
-      %td= link_to 'Show', survey
-      %td= link_to 'Edit', edit_survey_path(survey)
-      %td= link_to 'Destroy', survey, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-%br
-
-= link_to 'New Survey', new_survey_path

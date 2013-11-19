@@ -60,3 +60,16 @@ form > fieldset {
       border-bottom: 1px solid $grayLighter;
     }
 }
+
+.grade {
+  font-family: Arial;
+  font-size: 3em;
+  color: #444444;
+  text-shadow: 1px 1px 2px black, 0 0 1em #333333;
+  border-bottom: 2px #696969;
+  border-bottom-style: inset;
+
+}
+.display-inline { display: inline; list-style: none;}
+.first_level { margin-left: 20px; }
+.second_level { margin-left: 40px; }
