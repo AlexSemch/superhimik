@@ -14,5 +14,6 @@ class Topic < ActiveRecord::Base
 	validates :content, presence: true, length: { minimum: 5}
 	before_save { |topic| topic.content = content.capitalize}
 	has_many :theories
+  has_many :surveys
 	default_scope order: 'topics.grade'
 end

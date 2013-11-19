@@ -1,5 +1,7 @@
 Superhimik::Application.routes.draw do
   
+  resources :surveys
+
   resources :theories
 
   resources :topics

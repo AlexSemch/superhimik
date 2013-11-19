@@ -23,7 +23,10 @@ module Superhimik
     
     
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
-    
+    # Generate without stylesheets 
+    config.generators do |g|
+        g.stylesheets false
+    end    
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]

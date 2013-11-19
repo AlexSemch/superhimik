@@ -1,0 +1,18 @@
+= simple_form_for(@survey, html: {class: 'form-inline'}) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :topic, label_method: :content, value_method: :id,  label: false, prompt: I18n.t(:choose_topic)
+    = f.input :name, label: false, input_html: { size: 120 }
+    = f.input :number_of_quesitons, label: false, input_html: { step: 5 }
+    = f.input :time_to_complete, label: false, input_html: { step: 5 }
+    = f.input :test_type, collection: ['звичайний тест','контрольний тест'], as: :radio_buttons, label: false
+    .col-md-offset-1.panel.panel-default 
+      = f.simple_fields_for :questions do |builder|
+        = render 'question_fields', f: builder
+      = link_to_add_fields "Додати питання", f, :questions
+
+
+  .form-actions.text-center
+    = f.button :submit, t(:save), class: 'btn btn-success btn-lg'
+    

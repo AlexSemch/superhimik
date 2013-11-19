@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131115145747) do
+ActiveRecord::Schema.define(version: 20131119162113) do
+
+  create_table "answers", force: true do |t|
+    t.integer  "question_id"
+    t.string   "content"
+    t.boolean  "correct_answer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
@@ -40,6 +48,14 @@ ActiveRecord::Schema.define(version: 20131115145747) do
     t.datetime "updated_at"
   end
 
+  create_table "questions", force: true do |t|
+    t.integer  "survey_id"
+    t.text     "content"
+    t.integer  "number_of_answer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "settings", force: true do |t|
     t.string   "system_name"
     t.string   "nav_year"
@@ -51,6 +67,16 @@ ActiveRecord::Schema.define(version: 20131115145747) do
   end
 
   add_index "settings", ["system_name"], name: "index_settings_on_system_name", unique: true, using: :btree
+
+  create_table "surveys", force: true do |t|
+    t.integer  "topic_id"
+    t.string   "name"
+    t.integer  "number_of_quesitons"
+    t.integer  "time_to_complete"
+    t.string   "test_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "theories", force: true do |t|
     t.integer  "topic_id"

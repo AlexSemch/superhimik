@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Topic:
+  = @survey.topic_id
+%p
+  %b Name:
+  = @survey.name
+%p
+  %b Number of quesitons:
+  = @survey.number_of_quesitons
+%p
+  %b Time to complete:
+  = @survey.time_to_complete
+%p
+  %b Type:
+  = @survey.type
+
+= link_to 'Edit', edit_survey_path(@survey)
+\|
+= link_to 'Back', surveys_path

@@ -20,4 +20,4 @@ doc/
 .secret
 bundler_stubs/
 # Ignore paperclip file
-/public/system/
+/public/system

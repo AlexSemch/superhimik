@@ -1,0 +1,27 @@
+%h1 Listing surveys
+
+%table
+  %tr
+    %th Topic
+    %th Name
+    %th Number of quesitons
+    %th Time to complete
+    %th Type
+    %th
+    %th
+    %th
+
+  - @surveys.each do |survey|
+    %tr
+      %td= survey.topic_id
+      %td= survey.name
+      %td= survey.number_of_quesitons
+      %td= survey.time_to_complete
+      %td= survey.test_type
+      %td= link_to 'Show', survey
+      %td= link_to 'Edit', edit_survey_path(survey)
+      %td= link_to 'Destroy', survey, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Survey', new_survey_path
