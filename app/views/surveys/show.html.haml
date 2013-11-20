@@ -1,7 +1,7 @@
 - provide :title, @survey.name.html_safe
 .text-center
   %h1
-    = @survey.name
+    = @survey.name.html_safe
     .label.label-default
       = @survey.time_to_complete.to_s + ' хв'
 
@@ -17,11 +17,11 @@
         .second_level
           = answer.content.html_safe
 
-
-= link_to surveys_path do
-  %span.glyphicon.glyphicon-circle-arrow-left
-  = I18n.t(:back)
-\|
-= link_to edit_survey_path(@survey) do
-  %span.glyphicon.glyphicon-edit
-  = I18n.t(:edit)
+%div{'data-no-turbolink'=> true}
+  = link_to surveys_path do
+    %span.glyphicon.glyphicon-circle-arrow-left
+    = I18n.t(:back)
+  \|
+  = link_to edit_survey_path(@survey) do
+    %span.glyphicon.glyphicon-edit
+    = I18n.t(:edit)

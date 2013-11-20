@@ -1,7 +1,8 @@
 .nested-atributes
   %fieldset
     = f.input :correct_answer, label: false
-    = f.input :content, label: false, input_html: { size: 120 }, placeholder: 'Введіть відповідь', as: :string
+    = f.input :content, label: false, input_html: { size: 120 }, placeholder: 'Введіть відповідь', as: :hidden
+    #myid.div-content.div_input{contentEditable: 'true'}
     = f.input :_destroy, as: :hidden
     = link_to '#', class: "remove_fields", title: "Видалити" do
       %span.glyphicon.glyphicon-remove

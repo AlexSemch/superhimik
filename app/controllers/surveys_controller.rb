@@ -44,7 +44,7 @@ class SurveysController < ApplicationController
   def update
     respond_to do |format|
       if @survey.update(survey_params)
-        format.html { flash[:success] = t(:test_successfully_updated); redirect_to surveys_url }
+        format.html { flash[:success] = t(:test_successfully_updated); redirect_to @survey }
         #format.json { head :no_content }
       else
         format.html { render action: 'edit' }

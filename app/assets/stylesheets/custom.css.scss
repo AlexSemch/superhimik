@@ -73,3 +73,13 @@ form > fieldset {
 .display-inline { display: inline; list-style: none;}
 .first_level { margin-left: 20px; }
 .second_level { margin-left: 40px; }
+
+//Див как форма ввода в bootstrap
+.div_input {
+  @extend .string;
+  @extend .optional;
+  @extend .form-control;
+  width: 700px;
+  resize: vertical;
+  overflow-y: hidden;
+}
