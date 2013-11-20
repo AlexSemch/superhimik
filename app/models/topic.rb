@@ -13,7 +13,7 @@ class Topic < ActiveRecord::Base
 	validates :grade, presence: true
 	validates :content, presence: true, length: { minimum: 5}
 	before_save { |topic| topic.content = content.capitalize}
-	has_many :theories
-  has_many :surveys
+	has_many :theories, dependent: :destroy
+  has_many :surveys, dependent: :destroy
 	default_scope order: 'topics.grade'
 end
