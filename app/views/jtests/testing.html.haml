@@ -1,0 +1,11 @@
+%h1 Testing process!!!
+
+- @quests.each do |question|
+  %h3= question.content.html_safe
+  .display-inline
+    - question.answers.order('random()').each do |answer|
+      .second_level
+        = answer.content.html_safe
+
+
+

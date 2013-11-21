@@ -1,0 +1,4 @@
+%h1 Jtests#new
+= simple_form_for @jtest, :url => start_path do |f|
+  = f.association :survey, collection: @surveys, prompt: "Choose a Test!"
+  = f.button :submit

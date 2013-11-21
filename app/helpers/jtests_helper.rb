@@ -1,0 +1,2 @@
+module JtestsHelper
+end

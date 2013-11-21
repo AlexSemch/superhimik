@@ -6,13 +6,6 @@ class TheoriesController < ApplicationController
   # GET /theories
   # GET /theories.json
   def index
-    topic_ids = []
-
-    # Get topic id for current user
-    get_topics.each do |topic| 
-      topic_ids << topic.id 
-    end
-
     @theories = Theory.where(topic_id: topic_ids).paginate(:page => params[:page], :per_page => 12)
   end
 
