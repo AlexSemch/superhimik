@@ -1,5 +1,5 @@
 = simple_form_for(@survey, html: {class: 'form-inline'}) do |f|
-  = f.error_notification
+  = f.error_notification class: "alert alert-warning", message: 'Перевірте введені дані:'
   %div{'data-no-turbolink'=> true}
     .form-inputs
       = f.association :topic, label_method: :content, value_method: :id,  label: false, prompt: I18n.t(:choose_topic)

@@ -1,4 +1,7 @@
-%h1 Jtests#new
-= simple_form_for @jtest, :url => start_path do |f|
-  = f.association :survey, collection: @surveys, prompt: "Choose a Test!"
-  = f.button :submit
+- provide :title, 'Новий тест'
+.center
+  %h1 Новий тест
+  = simple_form_for @jtest, :url => start_path do |f|
+    = f.association :survey,  collection: @surveys, prompt: "Оберіть тест:", label: false
+    .center
+      = f.button :submit, "Розпочати тест", class: 'btn btn-success btn-lg'

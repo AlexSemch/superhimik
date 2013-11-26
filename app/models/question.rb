@@ -15,4 +15,9 @@ class Question < ActiveRecord::Base
   has_many :answers, dependent: :destroy
   accepts_nested_attributes_for :answers, allow_destroy: true
   validates :survey_id, :content, presence: true
+
+  def random_answers
+    answers.order('random()')
+  end
+
 end

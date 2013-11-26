@@ -1,20 +1,16 @@
-- provide :title, 'Тестування'
-= form_tag(controller: 'jtests', action: 'end_testing', method: 'post') do
+%h1 Testing process!!!
+= form_tag(controller: 'jtests', action: 'score', method: 'post') do
   - q=0
   = hidden_field_tag "testing[jtest_id]", @jtest.id
   - @quests.each do |question|
     - a=0
-    %h3
-      = (q+1).to_s + '. '
-      = question.content.html_safe
+    %h3= question.content.html_safe
     = hidden_field_tag "testing[quesiton_attributes][#{q}][question_id]", question.id
     .display-inline
-      - question.random_answers.each do |answer|
+      - question.answers.order('random()').each do |answer|
         .second_level
           = check_box_tag("testing[quesiton_attributes][#{q}][answer_attributes][#{a}][answer_id]", answer.id)
           = answer.content.html_safe
           - a+=1
     - q +=1
-  .center
-    = submit_tag("Закінчити тестування", class: "btn btn-primary btn-lg")
-
+  = submit_tag("Finish_test")

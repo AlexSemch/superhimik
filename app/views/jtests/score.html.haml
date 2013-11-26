@@ -1,0 +1,9 @@
+%h1.center= "#{current_user.pip}, Ваш бал за тест: #{@jtest.score.round(2)}"
+.pull-left
+  = link_to theories_path do
+    %span.glyphicon.glyphicon-book
+    = "Теоретичн матеріали"
+.pull-right
+  = link_to start_path do
+    %span.glyphicon.glyphicon-road
+    = "Новий тест"

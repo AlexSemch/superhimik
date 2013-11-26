@@ -3,8 +3,11 @@ Superhimik::Application.routes.draw do
   # get '/jtests/new'
   match '/start',   to: 'jtests#new',            via: 'get'
   match '/start',   to: 'jtests#create',         via: 'post'
-  match '/testing', to: 'jtests#testing',        via: 'get' 
-  # get '/testing/:id' => 'jtests#testing', as: :testing
+  match '/testing', to: 'jtests#testing',        via: 'get'
+  match '/testing',   to: 'jtests#end_testing',  via: 'post'
+  match '/score',   to: 'jtests#score',          via: 'get'
+
+
   resources :surveys
 
   resources :theories

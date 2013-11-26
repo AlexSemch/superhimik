@@ -15,6 +15,9 @@
           %a{:href => "#"} Contact 
       %ul{:class => "nav navbar-nav navbar-right"}
         -if signed_in?
+          %li
+            =link_to "Тестування", start_path
+
           %li.dropdown
             %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
               =I18n.t(:navchanna)

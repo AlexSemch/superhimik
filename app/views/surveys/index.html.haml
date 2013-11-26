@@ -10,7 +10,7 @@
   .grade= grade
   .panel.panel-default
     -topics.group_by{|t| t.topic_id}.each do |top, surv|
-      %h2
+      %h3
         .label.label-default= Topic.find(top).content
       .first_level
         %ul.list-group

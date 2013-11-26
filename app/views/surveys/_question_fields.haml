@@ -2,7 +2,6 @@
   %fieldset
     = f.input :content, label: false, input_html: { size: 120 }, placeholder: 'Введіть текст питання', as: :hidden
     .div-content.div_input{contentEditable: 'true'}
-    = f.input :number_of_answer, label: false, input_html: { step: 2, placeholder: 'Кількість відповідей' }
     = f.input :_destroy, as: :radio_buttons, label: 'Видалити? -> '
     .col-md-offset-1.panel.panel-default
       = f.simple_fields_for :answers do |builder|
