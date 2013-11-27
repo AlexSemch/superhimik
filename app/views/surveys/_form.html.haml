@@ -7,7 +7,7 @@
       .div-content.div_input{contentEditable: 'true'}
       = f.input :number_of_quesitons, label: false, input_html: { step: 5 }
       = f.input :time_to_complete, label: false, input_html: { step: 5 }
-      = f.input :test_type, collection: ['контрольний тест'], as: :check_boxes, label: false
+      = f.input :test_type, collection: ['закритий', 'активний'], label: false, include_blank: false
       .col-md-offset-1.panel.panel-default
         = f.simple_fields_for :questions do |builder|
           = render 'question_fields', f: builder

@@ -28,7 +28,7 @@ def add_test
 	topic = Topic.create!(content: "Розділ 1. Номенклатура та властивості основних класів неорганічних сполук. Основні закони хімії. Основи хімічної термодинаміки",
 	                      grade: 7)
 	survey = topic.surveys.create!(name: 'Номенклатура та властивості основних класів неорганічних сполук.',
-                                 number_of_quesitons: 10, time_to_complete: 5 )
+                                 number_of_quesitons: 10, time_to_complete: 5, test_type: 'закритий' )
   question = survey.questions.create!(content: "0,25 моль хлороводню (н.у.) займає об’єм:")
   question.answers.create!(content: "11,2 дм3")
   question.answers.create!(content: "44,8 дм3")

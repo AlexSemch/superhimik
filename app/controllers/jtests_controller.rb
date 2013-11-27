@@ -4,7 +4,15 @@ class JtestsController < ApplicationController
 
   def new
     @jtest = Jtest.new
-    @surveys = Survey.where(topic_id: topic_ids)
+    if current_user.admin?
+      @surveys = Survey.all
+    elsif !Survey.where(topic_id: topic_ids, test_type: 'активний').empty?
+      @surveys = Survey.where(topic_id: topic_ids, test_type: 'активний')
+    else
+      flash[:warning] = 'На жаль, для Вас тестових завданнь ще немає'
+      redirect_to root_path
+    end
+
   end
 
   def create
