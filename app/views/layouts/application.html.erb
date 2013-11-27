@@ -11,16 +11,16 @@
 <body>
 	<div class="row">
 		<div class="col-md-12">
-			<%= render 'layouts/header' %>
-			<% flash.each do |key, value| %>
-				<div class="alert alert-<%= key %> fade in">
-					<%= value %>
-					<a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
-        		</div>
-      		<% end %>
-			<div class="content">
-        <%= yield %>  
-      </div>
+		    <%= render 'layouts/header' %>
+            <div class="content">
+              <% flash.each do |key, value| %>
+                  <div class="alert alert-<%= key %> fade in">
+                    <%= value %>
+                    <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
+                  </div>
+              <% end %>
+              <%= yield %>
+            </div>
       	
 			
 					

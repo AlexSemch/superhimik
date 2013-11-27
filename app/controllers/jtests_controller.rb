@@ -66,9 +66,11 @@ class JtestsController < ApplicationController
       ans.each do |truanswer|
         real << truanswer.id
       end
-      quest_attributes[:answer_attributes].each do |key, answer_attributes|
-        true_answer_ids << answer_attributes[:answer_id].to_i
+      if (quest_attributes[:answer_attributes])
+        quest_attributes[:answer_attributes].each do |key, answer_attributes|
+          true_answer_ids << answer_attributes[:answer_id].to_i
 
+        end
       end
       (true_answer_ids.sort == real.sort) ? (flag = true) : (flag = false)
       score += 1 if flag

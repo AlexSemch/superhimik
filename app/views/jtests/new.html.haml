@@ -2,6 +2,6 @@
 .center
   %h1 Новий тест
   = simple_form_for @jtest, :url => start_path do |f|
-    = f.association :survey,  collection: @surveys, prompt: "Оберіть тест:", label: false
+    = f.association :survey,  collection: @surveys, label: false, include_blank: false
     .center
       = f.button :submit, "Розпочати тест", class: 'btn btn-success btn-lg'

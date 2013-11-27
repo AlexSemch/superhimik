@@ -1,20 +1,46 @@
 - provide :title, 'Тестування'
-= form_tag(controller: 'jtests', action: 'end_testing', method: 'post') do
-  - q=0
-  = hidden_field_tag "testing[jtest_id]", @jtest.id
-  - @quests.each do |question|
-    - a=0
-    %h3
-      = (q+1).to_s + '. '
-      = question.content.html_safe
-    = hidden_field_tag "testing[quesiton_attributes][#{q}][question_id]", question.id
-    .display-inline
-      - question.random_answers.each do |answer|
-        .second_level
-          = check_box_tag("testing[quesiton_attributes][#{q}][answer_attributes][#{a}][answer_id]", answer.id)
-          = answer.content.html_safe
-          - a+=1
-    - q +=1
-  .center
-    = submit_tag("Закінчити тестування", class: "btn btn-primary btn-lg")
+.countdown{style: 'position: fixed; left: 40%; top: 45px'}
+.test{style: 'margin-top: 160px'}
+  = form_tag({controller: 'jtests', action: 'end_testing'}, method: 'post', name: 'testing_form') do
+    - q=0
+    = hidden_field_tag "testing[jtest_id]", @jtest.id
+    = hidden_field_tag "count[time]", @survey.time_to_complete * 60
+    - @quests.each do |question|
+      - a=0
+      %h3
+        = (q+1).to_s + '. '
+        = question.content.html_safe
+      = hidden_field_tag "testing[quesiton_attributes][#{q}][question_id]", question.id
+      .display-inline
+        - question.random_answers.each do |answer|
+          .second_level
+            = check_box_tag("testing[quesiton_attributes][#{q}][answer_attributes][#{a}][answer_id]", answer.id)
+            = answer.content.html_safe
+            - a+=1
+      - q +=1
+    .center
+      = submit_tag("Закінчити тестування", class: "btn btn-primary btn-lg")
+
+
+
+:javascript
+  var clock = $('.countdown').FlipClock($('#count_time').val(), {
+  clockFace: 'MinuteCounter',
+  countdown: true,
+  callbacks: {
+    stop: function() {
+      $('#count_time').val(0);
+  	  alert('Час вийшов');
+  	  document.testing_form.submit();
+  	}
+  }
+  });
+
+:javascript
+
+  window.onbeforeunload = function() {
+     if  ($('#count_time').val() != 0) {
+      return "Тест не закінчений! Ви дійсно хочете завершити тестування?";
+     };
+  };
 
