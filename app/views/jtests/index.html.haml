@@ -3,7 +3,7 @@
   .panel-heading
     %h3.center Журнал успішності  
   - if current_user.admin?
-    %table.table.datatable.table-bordered
+    %table.datatable.table-bordered#journal
       %thead
         %tr
           %th Навчальний рік
@@ -26,7 +26,7 @@
         %th
         %th
   - else
-    %table.table.datatable.table-bordered
+    %table.datatable.table-bordered#journal
       %thead
         %tr
           %th Навчальний рік
@@ -117,7 +117,7 @@
 
     $(document).ready(function() {
         /* Initialise the DataTable */
-        var oTable = $('.datatable').dataTable( {
+        var oTable = $('#journal').dataTable( {
             "oLanguage": {
                 "sSearch": "Пошук",
                 "sLengthMenu": "Показувати _MENU_ записів",

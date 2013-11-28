@@ -7,56 +7,57 @@
         %span{:class => "icon-bar"} 
         %span{:class => "icon-bar"} 
       =link_to I18n.t(:superhimik), root_path, :class => "navbar-brand"
-    %div{:class => "collapse navbar-collapse navbar-ex1-collapse"}
-      %ul{:class => "nav navbar-nav"}
-        %li 
-          %a{:href => "#"} About
-        %li  
-          %a{:href => "#"} Contact 
-      %ul{:class => "nav navbar-nav navbar-right"}
-        -if signed_in?
-          %li
-            =link_to "Тестування", start_path
+    %div{'data-no-turbolink'=> false}
+      %div{:class => "collapse navbar-collapse navbar-ex1-collapse"}
+        %ul{:class => "nav navbar-nav"}
+          %li 
+            %a{:href => "#"} About
+          %li  
+            %a{:href => "#"} Contact 
+        %ul{:class => "nav navbar-nav navbar-right"}
+          -if signed_in?
+            %li
+              =link_to "Тестування", start_path
 
-          %li.dropdown
-            %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-              =I18n.t(:navchanna)
-              %b.caret
-            %ul.dropdown-menu
-              %li
-                =link_to raw('<span class="glyphicon glyphicon-list"></span>' + I18n.t(:topics)), topics_path
-              %li
-                =link_to raw('<span class="glyphicon glyphicon-file"></span>' + I18n.t(:theories)), theories_path
-              - if current_user.admin?
-                %li
-                  =link_to raw('<span class="glyphicon glyphicon-check"></span>' + t(:tests)), surveys_path
-              %li
-                =link_to raw('<span class="glyphicon glyphicon-stats"></span> Журнал успішності'), journal_path
-          -if current_user.admin?
             %li.dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-                =I18n.t(:adminka)
+                =I18n.t(:navchanna)
+                %b.caret
+              %ul.dropdown-menu
+                %li
+                  =link_to raw('<span class="glyphicon glyphicon-list"></span>' + I18n.t(:topics)), topics_path
+                %li
+                  =link_to raw('<span class="glyphicon glyphicon-file"></span>' + I18n.t(:theories)), theories_path
+                - if current_user.admin?
+                  %li
+                    =link_to raw('<span class="glyphicon glyphicon-check"></span>' + t(:tests)), surveys_path
+                %li
+                  =link_to raw('<span class="glyphicon glyphicon-stats"></span> Журнал успішності'), journal_path, 'data-no-turbolink'=> false
+            -if current_user.admin?
+              %li.dropdown
+                %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+                  =I18n.t(:adminka)
+                  %b.caret 
+                %ul.dropdown-menu
+                  %li
+                    =link_to I18n.t(:system_settings), settings_path
+                  %li
+                    =link_to I18n.t(:dimage), dimages_path
+                  %li
+                    =link_to I18n.t(:users), users_path  
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+                =I18n.t(:account)
                 %b.caret 
               %ul.dropdown-menu
                 %li
-                  =link_to I18n.t(:system_settings), settings_path
+                  =link_to raw('<span class="glyphicon glyphicon-user"></span>' + I18n.t(:profile)), current_user
                 %li
-                  =link_to I18n.t(:dimage), dimages_path
+                  =link_to raw('<span class="glyphicon glyphicon-wrench"></span>' + I18n.t(:settings)), edit_user_path(current_user)
+                %li.divider 
                 %li
-                  =link_to I18n.t(:users), users_path  
-          %li.dropdown
-            %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-              =I18n.t(:account)
-              %b.caret 
-            %ul.dropdown-menu
-              %li
-                =link_to raw('<span class="glyphicon glyphicon-user"></span>' + I18n.t(:profile)), current_user
-              %li
-                =link_to raw('<span class="glyphicon glyphicon-wrench"></span>' + I18n.t(:settings)), edit_user_path(current_user)
-              %li.divider 
-              %li
-                =link_to raw('<span class="glyphicon glyphicon-log-out"></span>' + I18n.t(:sign_out)), signout_path, method: "delete"
-        -else  
-          %li
-            = link_to I18n.t(:sign_in), signin_path 
-        
+                  =link_to raw('<span class="glyphicon glyphicon-log-out"></span>' + I18n.t(:sign_out)), signout_path, method: "delete"
+          -else  
+            %li
+              = link_to I18n.t(:sign_in), signin_path 
+          
