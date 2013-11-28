@@ -18,4 +18,5 @@
 //= require jquery.nivo.slider
 //= require jquery.nivo.slider.pack
 //= require ckeditor/init
+//= require dataTables/jquery.dataTables
 //= require_tree .

@@ -15,6 +15,7 @@ gem "nivo_slider", github: 'ciserfan/nivo_slider'
 gem "ckeditor", "~> 4.0.6"
 gem "truncate_html", "~> 0.9.2"
 gem 'jquery-turbolinks'
+gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
 
 group :development, :test do
   gem 'pg', '0.15.1'

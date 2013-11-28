@@ -2,6 +2,15 @@ class JtestsController < ApplicationController
   include TopicsHelper
   before_action :signed_in_user
 
+  def index
+    if current_user.admin?
+      @jtests = Jtest.all
+    else
+      @jtests = Jtest.where(user_id: current_user.id)    
+    end
+    
+  end
+
   def new
     @jtest = Jtest.new
     if current_user.admin?
@@ -19,6 +28,7 @@ class JtestsController < ApplicationController
 	@jtest = Jtest.new(jtest_params)
   	@jtest.user_id = current_user.id
     @jtest.score = 0.0
+    @jtest.nav_year = Setting.first.nav_year
   	if @jtest.save
   	  session[:jtest_id] = @jtest.id
   	  redirect_to testing_url

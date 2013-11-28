@@ -12,5 +12,6 @@
  *= require twitter/bootstrap
  *= require nivo-slider
  *= require nivo-default
+ *= require dataTables/jquery.dataTables
  *= require_tree .
  */

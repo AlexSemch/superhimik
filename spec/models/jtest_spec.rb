@@ -8,6 +8,7 @@
 #  score      :float
 #  created_at :datetime
 #  updated_at :datetime
+#  nav_year   :string(255)
 #
 
 require 'spec_helper'

@@ -6,6 +6,7 @@ Superhimik::Application.routes.draw do
   match '/testing', to: 'jtests#testing',        via: 'get'
   match '/testing',   to: 'jtests#end_testing',  via: 'post'
   match '/score',   to: 'jtests#score',          via: 'get'
+  match '/journal',   to: 'jtests#index',          via: 'get'
 
 
   resources :surveys
